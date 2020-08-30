@@ -41,8 +41,8 @@ if __name__ == '__main__':
 
         distance = grovepi.ultrasonicRead(ultrasonic)
         underThreshold = ""
-        threshold = analogRead(potentiometer)
-        
+        threshold = grovepi.analogRead(potentiometer)
+
         if distance < threshold:
         	underThreshold = "OBJ PRES"
         	grove_rgb_lcd.setRGB(128,0,0)
