@@ -31,7 +31,9 @@ be true"""
 if __name__ == '__main__':
     PORT = 4    # D4
 
-    grove_rgb_lcd.setText("Hello World!")
+    threshold = 12
+
+    grove_rgb_lcd.setText(str(threshold) + "cm")
     grove_rgb_lcd.setRGB(0,128,64)
 
     while True:
