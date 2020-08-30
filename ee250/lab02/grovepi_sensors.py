@@ -32,7 +32,7 @@ if __name__ == '__main__':
     ultrasonic = 4    # D4
     potentiometer = 0
 
-    threshold = 12
+    threshold = 0
 
     while True:
         #So we do not poll the sensors too quickly which may introduce noise,
@@ -49,4 +49,4 @@ if __name__ == '__main__':
         else:
         	underThreshold = "        "
         	grove_rgb_lcd.setRGB(0,128,64)
-        grove_rgb_lcd.setText_norefresh("%3d"%threshold + "cm " + underThreshold + "\n" + "%3d"%distance + "cm")
+        grove_rgb_lcd.setText("%3d"%threshold + "cm " + underThreshold + "\n" + "%3d"%distance + "cm")
