@@ -29,7 +29,8 @@ import grove_rgb_lcd
 is, if you run `python3 grovepi_sensors.py` in terminal, this if-statement will 
 be true"""
 if __name__ == '__main__':
-    PORT = 4    # D4
+    ultrasonic = 4    # D4
+    potentiometer = 0
 
     threshold = 12
 
@@ -38,8 +39,10 @@ if __name__ == '__main__':
         #sleep for a reasonable time of 200ms between each iteration.
         time.sleep(0.2)
 
-        distance = grovepi.ultrasonicRead(PORT)
+        distance = grovepi.ultrasonicRead(ultrasonic)
         underThreshold = ""
+        threshold = analogRead(potentiometer)
+        
         if distance < threshold:
         	underThreshold = "OBJ PRES"
         	grove_rgb_lcd.setRGB(128,0,0)
