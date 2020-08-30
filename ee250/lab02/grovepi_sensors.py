@@ -46,4 +46,4 @@ if __name__ == '__main__':
         else:
         	underThreshold = "        "
         	grove_rgb_lcd.setRGB(0,128,64)
-        grove_rgb_lcd.setText_norefresh(str.format(threshold) + "cm " + underThreshold + "\n" + str.format(distance) + "cm")
+        grove_rgb_lcd.setText_norefresh("{}".format(threshold) + "cm " + underThreshold + "\n" + "{}".format(distance) + "cm")
