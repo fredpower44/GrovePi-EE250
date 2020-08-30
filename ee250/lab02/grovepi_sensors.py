@@ -33,7 +33,6 @@ if __name__ == '__main__':
 
     threshold = 12
 
-    grove_rgb_lcd.setText(str(threshold) + "cm")
     grove_rgb_lcd.setRGB(0,128,64)
 
     while True:
@@ -41,4 +40,9 @@ if __name__ == '__main__':
         #sleep for a reasonable time of 200ms between each iteration.
         time.sleep(0.2)
 
-        print(grovepi.ultrasonicRead(PORT))
+        distance = grovepi.ultrasonicRead(PORT)
+        underThreshold = ""
+        if distance < threshold:
+        	underThreshold = "OBJ PRES"
+        	grove_rgb_lcd.setRGB(128,64,0)
+        grove_rgb_lcd.setText_norefresh(str(threshold) + "cm " + underThreshold + "\n" + str(distance) + "cm")
