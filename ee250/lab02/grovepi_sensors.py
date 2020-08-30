@@ -30,8 +30,8 @@ be true"""
 if __name__ == '__main__':
     PORT = 4    # D4
 
-    grovepi.setText("Hello World!")
-    grovepi.setRGB(0,128,64)
+    grove_rgb_lcd.setText("Hello World!")
+    grove_rgb_lcd.setRGB(0,128,64)
 
     while True:
         #So we do not poll the sensors too quickly which may introduce noise,
