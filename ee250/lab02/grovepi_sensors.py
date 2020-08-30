@@ -33,8 +33,6 @@ if __name__ == '__main__':
 
     threshold = 12
 
-    grove_rgb_lcd.setRGB(0,128,64)
-
     while True:
         #So we do not poll the sensors too quickly which may introduce noise,
         #sleep for a reasonable time of 200ms between each iteration.
@@ -44,5 +42,8 @@ if __name__ == '__main__':
         underThreshold = ""
         if distance < threshold:
         	underThreshold = "OBJ PRES"
-        	grove_rgb_lcd.setRGB(128,64,0)
+        	grove_rgb_lcd.setRGB(128,0,0)
+        else:
+        	underThreshold = ""
+        	grove_rgb_lcd.setRGB(0,128,64)
         grove_rgb_lcd.setText_norefresh(str(threshold) + "cm " + underThreshold + "\n" + str(distance) + "cm")
