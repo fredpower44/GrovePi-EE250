@@ -1,13 +1,12 @@
 """
+Name: Frederick Zhang
+Github link: https://Github.com/fredpower44/GrovePi-EE250.git
 Server IP is 52.88.20.156, ports are 5000-5008, socket is UNIX TCP 
 Server receiver buffer is char[256]
 If correct, the server will send a message back to you saying "I got your message"
 Write your socket client code here in python
 Establish a socket connection -> send a short message -> get a message back -> ternimate
 """
-
-#Name: Frederick Zhang
-#Github link: https://Github.com/fredpower44/GrovePi-EE250.git
 
 
 import socket
